@@ -1,11 +1,12 @@
 import React from 'react';
-
+import logo from './mainimage.jpg';
 // Stateless component
 const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      <p>Here is front page.!</p>
+       <img src={logo} alt="nice dog"/>
+
     </div>
   );
 };

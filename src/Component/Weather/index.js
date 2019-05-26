@@ -69,7 +69,7 @@ class SelectedWeather extends React.Component {
       return <div>Loading...</div>;
       }
 
-      const celsius = (weather.main.temp - 273.15).toFixed(2); // kelvin to celsius
+      const celsius = (weather.main.temp - 273.15).toFixed(2);
       const weatherMain = weather.weather[0].main;
       const iconId = weather.weather[0].id;
 

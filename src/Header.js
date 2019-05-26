@@ -10,7 +10,7 @@ const Header = props => {
    <Navigation />
     <header className="App-header">
 
-        <p>  Here is Weather Crawler </p>
+        <p>  This is team 8 Weather Crawler </p>
     </header>
     </div>
     );
