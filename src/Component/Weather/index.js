@@ -1,6 +1,9 @@
 import React from 'react';
 import { Switch, Route} from 'react-router';
-
+import './weather.css';
+import hazeimage from './haze.jpg';
+import clearimage from './clear.JPG';
+import cloudimage from './cloud.JPG';
 const API_CITIES ="http://localhost:8080/weather-crawler/available-cities";
 const API_WEATHER = 'http://localhost:8080/weather-crawler/current-weathers/by-city-name';
 
@@ -68,20 +71,50 @@ class SelectedWeather extends React.Component {
       if (!weather) {
       return <div>Loading...</div>;
       }
-
+      var weatherimage;
+      var comment ;
       const celsius = (weather.main.temp - 273.15).toFixed(2);
       const weatherMain = weather.weather[0].main;
       const iconId = weather.weather[0].id;
+      if(weatherMain=="Haze"){
+         weatherimage=hazeimage;
+      }
+      else if( weatherMain=="Clear"){
+            weatherimage=clearimage;
+           }
 
+       else if( weatherMain=="Clouds"){
+       weatherimage=cloudimage;
+       }
+
+       if(celsius<0){
+               comment = <div> 엄청 추운 날씨입니다. 꽁꽁 싸메고 가세요~!</div>;
+             }
+             else if (celsius<10){
+               comment = <div> 적당히 추운 날씨네요. 두꺼운 외투 하나 챙기시길~ </div>;
+             }
+             else if(celsius<20){
+               comment = <div> 선선한 날씨네요. 가디건 챙기시는거 추천드립니다~</div>;
+             }
+             else if(celsius<30){
+               comment = <div> 날씨가 점점 더워지네요.......</div>;
+               }
+             else {
+                       comment = <div> 너무 더운 날씨...... 집이 최고...</div>;
+                 }
       return (
+
         <div className="weather-today">
           <h2 className="weather-city">{cityId}</h2>
 
           <div className="weather-today-meta">
             <h3 className="weather-main">{weatherMain}</h3>
             <div className="weather-temp">{celsius}°</div>
+            {comment}
           </div>
+            <img src ={weatherimage} alt="해당 날씨는 사진이 없습니다...ㅜㅜ"/>
         </div>
+
       );
     }
 }
