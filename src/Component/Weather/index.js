@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, Route} from 'react-router';
 import './weather.css';
 import hazeimage from './haze.jpg';
+import clearimage from './clear.JPG';
+import cloudimage from './cloud.JPG';
 const API_CITIES ="http://localhost:8080/weather-crawler/available-cities";
 const API_WEATHER = 'http://localhost:8080/weather-crawler/current-weathers/by-city-name';
 
@@ -76,7 +78,9 @@ class SelectedWeather extends React.Component {
       if(weatherMain=="Haze"){
          weatherimage=hazeimage;
       }
-     
+      else if( weatherMain=="Clear"){
+            weatherimage=clearimage;
+           }
       return (
 
         <div className="weather-today">
