@@ -13,6 +13,7 @@ const Home = () => {
       <h1>Welcome EveryOne</h1>
       <a href= "https://www.twitch.tv/noocutt33"> NooCuTT Twitch channel </a><br></br><br></br>
 
+
     </div>
   );
 };
