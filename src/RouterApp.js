@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 import Header from './Header';
 import Weather from './Component/Weather';
 import Home from './Home';
+import About from './About';
 
-const About = () => <div>About</div>;
 
 const RouterApp = () =>{
   const city = 'Daejeon';
