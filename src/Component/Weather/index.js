@@ -112,7 +112,7 @@ class SelectedWeather extends React.Component {
             <div className="weather-temp">{celsius}°</div>
             {comment}
           </div>
-            <img src ={weatherimage} alt="날씨사진"/>
+            <img src ={weatherimage} alt="해당 날씨는 사진이 없습니다...ㅜㅜ"/>
         </div>
 
       );
