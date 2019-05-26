@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route} from 'react-router';
-
+import './weather.css';
+import hazeimage from './haze.jpg';
 const API_CITIES ="http://localhost:8080/weather-crawler/available-cities";
 const API_WEATHER = 'http://localhost:8080/weather-crawler/current-weathers/by-city-name';
 
@@ -68,12 +69,16 @@ class SelectedWeather extends React.Component {
       if (!weather) {
       return <div>Loading...</div>;
       }
-
+      var weatherimage;
       const celsius = (weather.main.temp - 273.15).toFixed(2);
       const weatherMain = weather.weather[0].main;
       const iconId = weather.weather[0].id;
-
+      if(weatherMain=="Haze"){
+         weatherimage=hazeimage;
+      }
+     
       return (
+
         <div className="weather-today">
           <h2 className="weather-city">{cityId}</h2>
 
@@ -81,7 +86,9 @@ class SelectedWeather extends React.Component {
             <h3 className="weather-main">{weatherMain}</h3>
             <div className="weather-temp">{celsius}°</div>
           </div>
+            <img src ={weatherimage} alt="날씨사진"/>
         </div>
+
       );
     }
 }
