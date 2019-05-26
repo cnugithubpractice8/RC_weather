@@ -10,8 +10,7 @@ const Header = props => {
    <Navigation />
     <header className="App-header">
 
-        <img src={logo} className="App-logo" alt="logo"/>
-        <div>CITY : {city} </div>
+        <p>  Here is Weather Crawler </p>
     </header>
     </div>
     );

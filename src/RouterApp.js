@@ -10,10 +10,10 @@ const RouterApp = () =>{
   const city = 'Daejeon';
   return (
          <div className="App">
-            <Header city={city} />
-
-            <Route exact path="/" component ={Weather} />
+        <Header city={city} />
+            <Route exact path="/" component ={Home} />
             <Route path ="/about" component = {About} />
+            <Route path="/weather" component = {Weather} />
         </div>
 );
 };
