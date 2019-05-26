@@ -2,8 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './Header';
 import Weather from './Component/Weather';
+import Home from './Home';
 
-const Home = () => <div>Home</div>;
 const About = () => <div>About</div>;
 
 const RouterApp = () =>{
